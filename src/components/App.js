@@ -26,7 +26,7 @@ const App = () => {
     }
     else if(!email.includes("@")){
       setError({
-        err: "Email must contain @"
+        err: "email must contain @"
       })
       valid = false
     }
@@ -71,7 +71,7 @@ const App = () => {
 
   return (
     <div id="main">
-      {value === "" ? <h2>Sign Up Form</h2> : <h2>Hello {value}</h2>}
+      {value === "" ? <h2>Sign Up Form</h2> : <h2>Hello {value.toUpperCase()}</h2>}
       <form onSubmit={handleSubmit}>
         <input ref={data.current.name} type="text" placeholder="Enter name" data-testid='name' />
         <br />
