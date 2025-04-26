@@ -36,7 +36,7 @@ const App = () => {
       })
       valid = false
     }
-    else if(gender === "Select Gender"){
+    else if(!gender || gender === "Select Gender"){
       setError({
         err: "Please identify as male, female or others"
       })
