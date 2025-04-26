@@ -14,7 +14,7 @@ const App = () => {
     err: ""
   })
 
-  const [value, setValue] = useState(null)
+  const [value, setValue] = useState("")
 
   function validateForm(name, email, gender, phoneNo, password){
     let valid = true
@@ -61,12 +61,17 @@ const App = () => {
       })
       let userNm = email.current.value.slice(0, email.current.value.indexOf("@"))
       setValue(userNm)
+      name.current.value = ""
+      email.current.value = ""
+      phoneNo.current.value = ""
+      password.current.value = ""
+      gender.current.value = "Select Gender"
     }
   }
 
   return (
     <div id="main">
-      <h2>Sign Up Form</h2>
+      {value === "" ? <h2>Sign Up Form</h2> : <h2>Hello {value}</h2>}
       <form onSubmit={handleSubmit}>
         <input ref={data.current.name} type="text" placeholder="Enter name" data-testid='name' />
         <br />
@@ -76,9 +81,9 @@ const App = () => {
         <br />
         <select ref={data.current.gender} data-testid='gender'>
           <option>Select Gender</option>
-          <option>Male</option>
-          <option>Female</option>
-          <option>Others</option>
+          <option>male</option>
+          <option>female</option>
+          <option>other</option>
         </select>
         <br />
         <br />
@@ -90,7 +95,8 @@ const App = () => {
         <br />
         <button type="submit" data-testid='submit'>Submit</button>
       </form>
-      {error.err === "" ? value && <p>Hello {value}</p> : <p style={{color: "red"}}>{error.err}</p>}
+      <br />
+      {error.err && <span style={{color: "red"}}>{error.err}</span>}
     </div>
   )
 }
