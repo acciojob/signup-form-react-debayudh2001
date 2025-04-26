@@ -24,6 +24,12 @@ const App = () => {
       })
       valid = false
     }
+    else if(!(/^[a-zA-Z0-9\s]+$/.test(name))){
+      setError({
+        err: "Name is not alphanumeric"
+      })
+      valid = false
+    }
     else if(!email.includes("@")){
       setError({
         err: "email must contain @"
