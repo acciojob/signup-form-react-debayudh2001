@@ -81,9 +81,9 @@ const App = () => {
         <br />
         <select ref={data.current.gender} data-testid='gender'>
           <option>Select Gender</option>
-          <option>male</option>
-          <option>female</option>
-          <option>other</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+          <option value="other">Others</option>
         </select>
         <br />
         <br />
