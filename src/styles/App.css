@@ -1,12 +1,6 @@
-h1 {
-    color: #27aedb;
-    text-align: center;
-    }
-    
-
-button{
-    color: #27aedb;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
+input{
+    padding: 4px 8px;
+}
+select{
+    padding: 3px 6px;
 }
